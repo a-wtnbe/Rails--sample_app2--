@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   # as:'名前'は、名前付きルートURLをわかりやすくするために使用
   # 　'todolists#show'の設定を'todolist'として利用できるって意味
   get'todolists/:id'=>'todolists#show',as:'todolist'
+  get'todolists/:id/edit'=>'todolists#edit',as:'edit_todolist'
+  patch'todolists/:id'=>'todolists#update',as:'update_todolist'
 end
