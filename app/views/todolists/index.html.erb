@@ -1,0 +1,14 @@
+<h1>投稿一覧</h1>
+<!--配列が持つ要素を順番に取得して処理を実行したいから、eachメゾット使用-->
+<!--@lists.each、Listレコードの数だけ繰り返し処理を行う-->
+<!--|list|はブロック変数？yes。do~endまでの処理の塊-->
+<% @lists.each do |list| %>
+<p>タイトル</p>
+<span>
+  |ブロック変数|の中身と、.titleの前のローカル変数は一致させなければならない
+  <!--"/todolists/:id"は、"/todolists/#{list.id}" #は式展開（代入）-->
+  <!--%= link_to list.title,"/todolists/#{list.id}" %>-->
+  <!--名前付きルート記述↓ （上と下は一緒↑↓）-->
+  <%= link_to list.title,todolist_path(list.id) %>
+</span>
+<% end %>

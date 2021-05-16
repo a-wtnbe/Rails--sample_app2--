@@ -14,7 +14,19 @@ class TodolistsController < ApplicationController
     # データをデータベースに保存するためのsaveメゾット（操作）実行
     list.save
     #データベース保存後、 top画面へリダイレクト
-    redirect_to '/top'
+    redirect_to todolist_path(list.id)
+  end
+
+  def index
+    # このインスタンス変数（＠lists）は複数のデータが入ってるから複数形
+    @lists = List.all
+  end
+
+  def show
+    # 1件のレコードを取得するため、インスタンス変数は単数形
+    # 特定のデータ1つは、モデル名.find(params[:id])で取得
+    # 　findメゾットは1つのレコードを取ってくる指示
+    @list = List.find(params[:id])
   end
 
   private
