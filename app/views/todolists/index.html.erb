@@ -5,10 +5,14 @@
 <% @lists.each do |list| %>
 <p>タイトル</p>
 <span>
-  |ブロック変数|の中身と、.titleの前のローカル変数は一致させなければならない
+  <!--|ブロック変数|の中身と、.titleの前のローカル変数は一致させなければならない-->
   <!--"/todolists/:id"は、"/todolists/#{list.id}" #は式展開（代入）-->
   <!--%= link_to list.title,"/todolists/#{list.id}" %>-->
   <!--名前付きルート記述↓ （上と下は一緒↑↓）-->
   <%= link_to list.title,todolist_path(list.id) %>
 </span>
+<p>画像</p>
+<!--Refile特有の書き方（覚えようぜ）-->
+<!--画像の幅:fill、高さpx、画像の拡張子format-->
+<%= attachment_image_tag list, :image, :fill, 100, 100, format:'jpeg' %>
 <% end %>

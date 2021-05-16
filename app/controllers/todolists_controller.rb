@@ -53,6 +53,7 @@ class TodolistsController < ApplicationController
     # permitキーで（:title,:body）を指定している。
     # これにより、list_paramsの中にフォームで入力されたデータが格納される
   def list_params
-    params.require(:list).permit(:title,:body)
+    params.require(:list).permit(:title, :body, :image)
   end
+
 end

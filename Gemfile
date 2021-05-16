@@ -60,3 +60,14 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# gem:Rubyでよく使う機能をまとめた管理ツール
+  # Refile:アプリケーション向けのファイル・アップロードのライブラリ
+  # 画像を組み込める、サムネイル作成、アップロード先を設定できる特徴あり
+  # 画像投稿用Gem
+gem "refile",require: "refile/rails",github: 'manfe/refile'
+# MiniMagick:サイズ調整など画像加工を行う画像加工用Gem
+gem "refile-mini_magick"
+
+# Gemfileへ新たにGemを追加したときには、
+  # 「＄bundle install」コマンドを実行しないとGemが使えない。
